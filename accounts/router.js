@@ -6,6 +6,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   db.select('*')
     .from('accounts')
+    .limit('7')
+    .orderBy('name')
     .then(accounts => {
       res.status(200).json(accounts);
     })
