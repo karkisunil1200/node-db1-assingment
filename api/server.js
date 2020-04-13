@@ -1,8 +1,11 @@
-const express = require("express");
+const express = require('express');
+const accountRouter = require('../accounts/router');
 
-const db = require("../data/dbConfig.js");
+const db = require('../data/dbConfig.js');
 
 const server = express();
+
+server.use('/api/accounts', accountRouter);
 
 server.use(express.json());
 
